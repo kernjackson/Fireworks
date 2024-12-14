@@ -1,24 +1,14 @@
 import SwiftUI
 
-struct FireworkModel {
-    let id: UUID
-    let time: Double
-    let endPoint: CGPoint
-    let burstColor: Color
-
-    init(id: UUID = UUID(), time: Double, endPoint: CGPoint, burstColor: Color) {
-        self.id = id
-        self.time = time
-        self.endPoint = endPoint
-        self.burstColor = burstColor
-    }
-}
-
 struct BloomingFirework: View {
     @State var time: Double = 0
     let endPoint: CGPoint
     let burstColor: Color
     
+    // Creates a timer that "publishes" events 120 times per second (1/120 seconds)
+    // The timer runs on the main thread/queue (.main)
+    // .common means the timer runs in the default run loop mode
+    // .autoconnect() starts the timer immediately when this property is accessed
     let timer = Timer.publish(
         every: 1/120,
         on: .main,
@@ -53,27 +43,14 @@ struct BloomingFirework: View {
             }
     }
 
-    static func randomColor() -> Color {
-        let colors: [Color] = [
-            .red,
-            .blue, 
-            .green,
-            .yellow,
-            .purple,
-            .cyan,
-            .orange,
-            .pink
-        ]
-        return colors.randomElement() ?? .white
-    }
 }
 
 #Preview {
     ZStack {
         Color.black
-        BloomingFirework(model: FireworkModel(time: 0.0, endPoint: .init(x: 0.2, y: 0.6), burstColor: BloomingFirework.randomColor()))
-        BloomingFirework(model: FireworkModel(time: 0.9, endPoint: .init(x: 0.7, y: 0.2), burstColor: BloomingFirework.randomColor()))
-        BloomingFirework(model: FireworkModel(time: 0.4, endPoint: .init(x: 0.4, y: 0.3), burstColor: BloomingFirework.randomColor()))
+        BloomingFirework(model: FireworkModel(time: 0.0, endPoint: .init(x: 0.2, y: 0.6), burstColor: .random))
+        BloomingFirework(model: FireworkModel(time: 0.9, endPoint: .init(x: 0.7, y: 0.2), burstColor: .random))
+        BloomingFirework(model: FireworkModel(time: 0.4, endPoint: .init(x: 0.4, y: 0.3), burstColor: .random))
     }
     .ignoresSafeArea()
 }
