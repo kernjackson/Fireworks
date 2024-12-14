@@ -1,6 +1,6 @@
 import SwiftUI
 
-struct BloomingFirework: View {
+struct FireworkView: View {
     @State var time: Double = 0
     let endPoint: CGPoint
     let burstColor: Color
@@ -48,9 +48,9 @@ struct BloomingFirework: View {
 #Preview {
     ZStack {
         Color.black
-        BloomingFirework(model: FireworkModel(time: 0.0, endPoint: .init(x: 0.2, y: 0.6), burstColor: .random))
-        BloomingFirework(model: FireworkModel(time: 0.9, endPoint: .init(x: 0.7, y: 0.2), burstColor: .random))
-        BloomingFirework(model: FireworkModel(time: 0.4, endPoint: .init(x: 0.4, y: 0.3), burstColor: .random))
+        FireworkView(model: FireworkModel(time: 0.0, endPoint: .init(x: 0.2, y: 0.6), burstColor: .random))
+        FireworkView(model: FireworkModel(time: 0.9, endPoint: .init(x: 0.7, y: 0.2), burstColor: .random))
+        FireworkView(model: FireworkModel(time: 0.4, endPoint: .init(x: 0.4, y: 0.3), burstColor: .random))
     }
     .ignoresSafeArea()
 }

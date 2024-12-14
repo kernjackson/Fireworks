@@ -13,6 +13,9 @@
 /* Begin PBXFileSystemSynchronizedRootGroup section */
 		EF22C0A52D0CB57300D3F034 /* Blooming Fireworks */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
+			explicitFileTypes = {
+				README.md = net.daringfireball.markdown;
+			};
 			path = "Blooming Fireworks";
 			sourceTree = "<group>";
 		};

@@ -8,7 +8,7 @@ struct ContentView: View {
             ZStack {
                 Color.black
                 ForEach(fireworks, id: \.id) { firework in
-                    BloomingFirework(model: firework)
+                    FireworkView(model: firework)
                 }
             }
             .onTapGesture { location in
