@@ -15,17 +15,15 @@ struct ContentView: View {
                 let x = location.x / geometry.size.width
                 let y = location.y / geometry.size.height
                 
-                // Create a new firework model
                 let newFirework = FireworkModel(
                     id: UUID(),
                     time: 0.0,
                     endPoint: .init(x: x, y: y),
                     burstColor: .random)
                 
-                // Add the new firework and limit to 10
                 fireworks.append(newFirework)
                 if fireworks.count > 10 {
-                    fireworks.removeFirst() // Remove the oldest firework
+                    fireworks.removeFirst()
                 }
             }
             .ignoresSafeArea()
