@@ -4,4 +4,4 @@ This code is adapted from this article [Blooming fireworks with Metal and SwiftU
 
 My primary contribution is making it interactive. You can tap or click the view to add up to 10 simultaneous fireworks.
 
-
+https://github.com/user-attachments/assets/c3ce54af-2fea-47fc-a44f-f8ac26d7ed59
