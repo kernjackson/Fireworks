@@ -7,6 +7,10 @@ struct ContentView: View {
         GeometryReader { geometry in
             ZStack {
                 Color.black
+                if fireworks.isEmpty {
+                    Text("Tap to Launch Fireworks")
+                        .foregroundStyle(.white)
+                }
                 ForEach(fireworks, id: \.id) { firework in
                     FireworkView(model: firework)
                 }
